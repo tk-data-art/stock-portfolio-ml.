@@ -1,6 +1,6 @@
 # Real-Time Stock Forecasting & Convex Portfolio Optimization
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/tk-data-art/stock-portfolio-ml/tree/main.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/tk-data-art/stock-portfolio-ml/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/GDyfJvLbK1Mho7C82AmdaY/UyqqHUoXUqfbc7NnbXrVnk/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/GDyfJvLbK1Mho7C82AmdaY/UyqqHUoXUqfbc7NnbXrVnk/tree/main)
 ![Python Version](https://img.shields.io/badge/python-3.12-blue.svg)
 ![Poetry](https://img.shields.io/badge/packaging-poetry-cyan.svg)
 ![Linter](https://img.shields.io/badge/linter-ruff-black.svg)
