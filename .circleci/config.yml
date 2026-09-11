@@ -1,0 +1,40 @@
+version: 2.1
+
+jobs:
+  validate-and-test:
+    docker:
+      - image: cimg/python:3.12.0
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - poetry-cache-v1-{{ checksum "poetry.lock" }}
+            - poetry-cache-v1-
+
+      - run:
+          name: Install Dependencies
+          command: poetry install --no-interaction
+
+      - save_cache:
+          key: poetry-cache-v1-{{ checksum "poetry.lock" }}
+          paths:
+            - ~/.cache/pypoetry
+            - .venv
+
+      - run:
+          name: Code Quality (Ruff Lint)
+          command: poetry run ruff check src/ tests/
+
+      - run:
+          name: Static Type Analysis (Mypy)
+          command: poetry run mypy src/
+
+      - run:
+          name: Unit Tests & Code Coverage
+          command: poetry run pytest --cov=src/stock_portfolio --cov-report=term-missing tests/
+
+workflows:
+  quality-gate:
+    jobs:
+      - validate-and-test
