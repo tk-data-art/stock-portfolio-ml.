@@ -1,4 +1,5 @@
 import logging
+
 import pandas as pd
 from prophet import Prophet
 
@@ -10,7 +11,9 @@ logging.getLogger("cmdstanpy").setLevel(logging.WARNING)
 class ProphetEngine:
     """Bayesian structural time-series forecasting engine using Meta Prophet."""
 
-    def __init__(self, changepoint_prior_scale: float = 0.05, interval_width: float = 0.80) -> None:
+    def __init__(
+        self, changepoint_prior_scale: float = 0.05, interval_width: float = 0.80
+    ) -> None:
         self.changepoint_prior_scale = changepoint_prior_scale
         self.interval_width = interval_width
 

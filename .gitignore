@@ -42,3 +42,8 @@ portfolio.db
 *.db
 *.sqlite3
 .DS_Store
+
+# DuckDB Local Storage
+*.duckdb
+*.duckdb.wal
+data/
